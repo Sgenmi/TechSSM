@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.xu.sjm.model.User;
+import com.xu.sjm.model.UserInfo;
+import com.xu.sjm.service.UserInfoService;
 import com.xu.sjm.service.UserService;
 
 @Controller
@@ -14,6 +16,8 @@ public class IndexController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private UserInfoService userInfoService;
 	
 	
 	
@@ -22,16 +26,25 @@ public class IndexController {
 		
 		User user = new User();
 		
+		UserInfo userInfo = new UserInfo();
+		
+		
 		short  a = 10;
 		
 		user.setUsername("sjm");
-		user.setPassword("123456789");
+		user.setPassword("1234567");
 		user.setAge(a);
+		userService.insertUser(user);
 		
-		userService.getUserById(1);
-		int b = userService.insertUser(user);
+		userInfo.setUid(user.getId());
 		
-		System.out.println(b);
+		userInfo.setMobile("13989484889");
+		userInfo.setQq("150560156");
+		
+		userInfoService.insert(userInfo);
+		
+		
+		
 		
 		System.out.println("fffffffffffff");
 		return "hello";
