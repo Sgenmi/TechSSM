@@ -8,7 +8,7 @@ import com.xu.sjm.model.User;
 import com.xu.sjm.service.UserService;
 
 @Service
-public class UserServiceimpl implements UserService {
+public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserMapper userMapper;
