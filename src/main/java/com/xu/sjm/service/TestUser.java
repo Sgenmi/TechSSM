@@ -20,7 +20,7 @@ public class TestUser {
 	private UserService userService;
 	 
 	@Test
-	public void insert() {
+	public void insert() throws Exception {
 		
 		short a = 5;
 		User user = new User();
