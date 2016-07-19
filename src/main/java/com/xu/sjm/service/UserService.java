@@ -6,6 +6,6 @@ public interface UserService {
 
 	User getUserById(int id);
 
-	int insertUser(User u);
+	int insertUser(User u) throws Exception;
 
 }
